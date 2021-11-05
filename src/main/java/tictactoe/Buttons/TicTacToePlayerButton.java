@@ -1,3 +1,7 @@
+package tictactoe.Buttons;
+
+import tictactoe.TicTacToe;
+
 import javax.swing.*;
 
 public class TicTacToePlayerButton extends JButton {

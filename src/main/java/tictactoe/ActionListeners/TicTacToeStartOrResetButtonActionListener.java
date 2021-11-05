@@ -1,7 +1,11 @@
+package tictactoe.ActionListeners;
+
+import tictactoe.TicTacToe;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TicTacToeResetButtonActionListener implements ActionListener {
+public class TicTacToeStartOrResetButtonActionListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent event) {

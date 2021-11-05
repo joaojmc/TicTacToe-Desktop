@@ -1,3 +1,11 @@
+package tictactoe;
+
+import tictactoe.ActionListeners.TicTacToeButtonActionListener;
+import tictactoe.ActionListeners.TicTacToePlayerButtonActionListener;
+import tictactoe.ActionListeners.TicTacToeStartOrResetButtonActionListener;
+import tictactoe.Buttons.TicTacToeButton;
+import tictactoe.Buttons.TicTacToePlayerButton;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -108,7 +116,7 @@ public class TicTacToe extends JFrame {
     void composeResetButton() {
         START_RESET_BUTTON.setText("Start");
         START_RESET_BUTTON.setName("ButtonStartReset");
-        START_RESET_BUTTON.addActionListener(new TicTacToeResetButtonActionListener());
+        START_RESET_BUTTON.addActionListener(new TicTacToeStartOrResetButtonActionListener());
     }
 
     void composeGameBoard() {
@@ -190,7 +198,7 @@ public class TicTacToe extends JFrame {
         START_RESET_BUTTON.setText("Reset");
     }
 
-    static void pressBoardButton(TicTacToeButton button) {
+    public static void pressBoardButton(TicTacToeButton button) {
         if (button.pressed || gameIsOver) return;
         if (turn == 0) startGame();
 
@@ -205,7 +213,7 @@ public class TicTacToe extends JFrame {
         }
     }
 
-    static void pressPlayerButton(TicTacToePlayerButton button) {
+    public static void pressPlayerButton(TicTacToePlayerButton button) {
         button.isHuman = !button.isHuman;
         button.setText(button.isHuman ? "Human" : "Robot");
     }
@@ -230,7 +238,7 @@ public class TicTacToe extends JFrame {
 
     //region Game control
 
-    static void startOrReset() {
+    public static void startOrReset() {
         if (turn == 0) {
             startGame();
         } else {
